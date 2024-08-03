@@ -11,3 +11,9 @@ body
 .modelView1 {
   min-height: 100vh;
 }
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
