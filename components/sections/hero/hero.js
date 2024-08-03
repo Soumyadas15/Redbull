@@ -7,7 +7,7 @@ export function HeroSection(){
                 <div className="w-full flex items-start justify-center pr-10">
                     <div className="flex flex-col items-center gap-6 mt-[19vh]">
                         <h1 className="text-3xl font-light text-neutral-600">An Energy Drink, that</h1>
-                        <h1 className="text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#000000]">Gives you <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#000000]">Wiiings</span></h1>
+                        <h1 className="text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#000000]">Gives you <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#2369ff] to-[#000000]">Wiiings</span></h1>
                     </div>
                 </div>
 
