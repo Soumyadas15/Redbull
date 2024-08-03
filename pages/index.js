@@ -21,7 +21,7 @@ const ModelViewer = dynamic(() =>
 const font = Sora({ subsets: ["latin"] });
 
 const title1 = (
-  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">Fueling <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">Champions</span> since 1984.®</h1>
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">Fueling <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#2369ff] to-[#000000]">Champions</span> since 1984.®</h1>
 )
 
 const body1 = (`Red Bull Energy Drink is appreciated worldwide 
@@ -32,7 +32,7 @@ const body1 = (`Red Bull Energy Drink is appreciated worldwide
 
 
 const title2 = (
-  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]"><span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">Beyond </span>Limits.®</h1>
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]"><span className="bg-clip-text text-transparent bg-gradient-to-b from-[#2369ff] to-[#000000]">Beyond </span>Limits.®</h1>
 )
 
 const body2 = (`Why blend in when you were born to stand out? 
@@ -42,7 +42,7 @@ const body2 = (`Why blend in when you were born to stand out?
 
 
 const title3 = (
-  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">Average is <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">boring</span>.</h1>
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">Average is <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#2369ff] to-[#000000]">boring</span>.</h1>
 )
 
 const body3 = (`Average is boring. You’re not here to play it safe; 
@@ -53,7 +53,7 @@ const body3 = (`Average is boring. You’re not here to play it safe;
 
 
 const title4 = (
-  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">A can has more than one <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">life</span>.</h1>
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">A can has more than one <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#2369ff] to-[#000000]">life</span>.</h1>
 )
 
 const body4 = (`At Red Bull, we recognise that we 

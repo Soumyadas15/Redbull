@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './style.module.scss';
 import { useScroll, useTransform, motion } from 'framer-motion';
 
-export const textHighlight = "bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]";
+export const textHighlight = "bg-clip-text text-transparent bg-gradient-to-b from-[#2369ff] to-[#000000]";
 export const textColor = "bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]"
 
 export function Text(){
