@@ -1,118 +1,110 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
+import { HeroSection } from "@/components/sections/hero/hero";
+import { BodySection } from "@/components/sections/body/body";
+import dynamic from "next/dynamic";
+import { Products } from "@/components/sections/products/products";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { Video } from "@/components/sections/video/video";
+import { Text } from "@/components/sections/text/text";
+import { Ingredients } from "@/components/sections/ingredients/ingredients";
+import { Cta } from "@/components/sections/cta/cta";
+import { Events } from "@/components/sections/events/events";
 
-const inter = Inter({ subsets: ["latin"] });
+const ModelViewer = dynamic(() => 
+  import('@/components/3d/model-viewer')
+    .then((mod) => mod.ModelViewer)
+)
+
+
+const font = Sora({ subsets: ["latin"] });
+
+const title1 = (
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">Fueling <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">Champions</span> since 1984.®</h1>
+)
+
+const body1 = (`Red Bull Energy Drink is appreciated worldwide 
+            by top athletes, students, and in highly demanding 
+            professions as well as during long drives
+`)
+
+
+
+const title2 = (
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]"><span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">Beyond </span>Limits.®</h1>
+)
+
+const body2 = (`Why blend in when you were born to stand out? 
+      Red Bull fuels the trailblazers, the risk-takers, 
+      the legends in the making.
+`)
+
+
+const title3 = (
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">Average is <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">boring</span>.</h1>
+)
+
+const body3 = (`Average is boring. You’re not here to play it safe; 
+  you’re here to conquer. With Red Bull, you’re always above the rest. 
+  Elevate your game and leave the ordinary behind.
+`)
+
+
+
+const title4 = (
+  <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#c0c0c0] to-[#555555]">A can has more than one <span className="bg-clip-text text-transparent bg-gradient-to-b from-[#012497] to-[#001351]">life</span>.</h1>
+)
+
+const body4 = (`At Red Bull, we recognise that we 
+  have a responsibility towards our environment. 
+  You can read more about our sustainable approach here:
+`)
+
+
 
 export default function Home() {
+  const ref = useRef(null);
+  const productsRef = useRef(null);
+  const isInView = useInView(ref, { margin: '10% 0px -0.005% 0px' });
+
+
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`bg-black transition duration-500 w-full h-auto ${font.className}`}
+      suppressHydrationWarning
+      id="main"
     >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <ModelViewer/>
+        <div className="model1View1">
+          <HeroSection/>
+          <BodySection title={title1} body={body1} buttonLabel={'Read our history'} linkLabel={'Success stories'}/>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <div className="model1View2">
+          <BodySection title={title2} body={body2} buttonLabel={'Our values'}/>
+          <BodySection title={title3} body={body3} buttonLabel={'Our misson'} linkLabel={'Our legacy'}/>
+        </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <div className="model1View3">
+          <Products/>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className=".infinityText">
+          <Text/>
+          <Video/>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+        
+        <div className="model1View4">
+          <Ingredients title={title3} body={body3}/>
+          <BodySection title={title4} body={body4} buttonLabel={'The lifecycle of the can'} linkLabel={'Take the quiz'}/>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className="model1View5">
+          <Events/>
+          <Cta/>
+        </div>
     </main>
   );
 }
